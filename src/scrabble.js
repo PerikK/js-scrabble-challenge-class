@@ -12,7 +12,7 @@ class Scrabble {
     this.tenPoints = ['Q', 'Z']
   }
 
-  isValid(word) {
+  isValid() {
     const allLetters = [
       ...this.onePoint,
       ...this.twoPoints,
@@ -23,8 +23,8 @@ class Scrabble {
       ...this.tenPoints
     ]
 
-    for (let i = 0; i < word.length; i++) {
-      if (!allLetters.includes(word[i])) {
+    for (const i of this.word) {
+      if (!allLetters.includes(this.word[i])) {
         return true
       }
     }
