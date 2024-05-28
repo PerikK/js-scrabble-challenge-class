@@ -2,7 +2,7 @@ class Scrabble {
   // Write your implementation here
   constructor(word) {
     this.points = 0
-    this.word = word.toUpperCase()
+    this.word = word ? word.toUpperCase() : ''
     this.onePoint = ['A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T']
     this.twoPoints = ['D', 'G']
     this.threePoints = ['B', 'C', 'M', 'P']
@@ -23,18 +23,18 @@ class Scrabble {
       ...this.tenPoints
     ]
 
-    if (word === null) {
-      this.points = 0
-    }
-
     for (let i = 0; i < word.length; i++) {
-      if (word.length > 0 && allLetters.includes(word[i])) {
+      if (!allLetters.includes(word[i])) {
         return true
       }
     }
+    return true
   }
 
   score() {
+    if (this.word === null || this.word === '') {
+      this.points = 0
+    }
     if (this.isValid(this.word)) {
       for (const i of this.word) {
         if (this.onePoint.includes(i)) {
@@ -66,8 +66,8 @@ class Scrabble {
 
 // tst = new Scrabble('')
 // tst.isValid('k')
-let game = new Scrabble('hello')
-console.log(game.word);
-console.log(game.score())
+// let game = new Scrabble('hello')
+// console.log(game.word);
+// console.log(game.score())
 
 module.exports = Scrabble
