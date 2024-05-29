@@ -64,10 +64,6 @@ class Scrabble {
   }
 }
 
-// tst = new Scrabble('')
-// tst.isValid('k')
-// let game = new Scrabble('hello')
-// console.log(game.word);
-// console.log(game.score())
+
 
 module.exports = Scrabble
