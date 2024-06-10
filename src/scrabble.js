@@ -63,7 +63,4 @@ class Scrabble {
     return this.points
   }
 }
-
-
-
 module.exports = Scrabble
